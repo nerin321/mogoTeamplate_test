@@ -1,0 +1,96 @@
+.about {
+  padding-top: 9.3rem;
+  padding-bottom: 11rem;
+  background-color: white;
+  //flex
+  // &-list {
+  //   display: flex;
+  //   flex-wrap: wrap;
+  //   margin-left: -3rem;
+  // }
+  // &-item {
+  //   margin-left: 3rem;
+  //   width: calc(33.33% - 3rem);
+  // }
+  //grid
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 3rem;
+  }
+  &-item {
+    position: relative;
+    z-index: 1;
+    transition: all 0.25s linear;
+    &:after {
+      content: "";
+      @include absoluteFull();
+      background-color: $third-color;
+      transition: all 0.25s linear;
+      // transform: translate(1rem, 1rem);
+      z-index: -1;
+    }
+    &:hover {
+      transform: translate(-1rem, -1rem);
+      .about-content {
+        opacity: 1;
+        visibility: visible;
+      }
+      &:after {
+        transform: translate(1rem, 1rem);
+        transition: all 0.25s linear;
+      }
+    }
+  }
+  &-content {
+    @include absoluteFull();
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s liner;
+    z-index: 2;
+    background: linear-gradient(
+      to bottom,
+      rgba($primary-color, 0.8),
+      rgba($secondary-color, 0.8)
+    );
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-transform: uppercase;
+    text-align: center;
+    padding-left: 2rem;
+  }
+  &-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  &-icon-title {
+    font-weight: bold;
+    font-size: 1.8rem;
+    line-height: 1.4;
+    @include textClamp();
+  }
+  @include maxWidth(767px) {
+    //flex box reponsive
+    // &-item {
+    //   width: 100%;
+    //   margin-bottom: 2.5rem;
+    // }
+    //grid
+    &-list {
+      grid-auto-columns: 80%;
+      grid-auto-flow: column;
+      grid-template-columns: unset;
+      grid-row-gap: 2.5rem;
+      overflow-x: scroll;
+      padding: 1rem;
+      scroll-snap-stop: always;
+      scroll-snap-type: x mandatory;
+    }
+    &-item {
+      scroll-snap-align: start;
+    }
+  }
+}

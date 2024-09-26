@@ -1,0 +1,155 @@
+.footer {
+  padding: 10rem 0 2rem;
+  &-top {
+    @include flexBox(stretch, space-between);
+    border-bottom: 1px solid $text-color;
+    padding-bottom: 7rem;
+    margin-bottom: 2.5rem;
+  }
+  &-column {
+    width: calc(25% - 2.5rem);
+    &:first-child {
+      width: calc(40% - 2.5rem);
+    }
+    &:not(:nth-child(1)) {
+      width: calc(35% - 2.5rem);
+    }
+  }
+  &-title {
+    height: 4rem;
+    font-size: 2.4rem;
+    text-transform: uppercase;
+  }
+  &-logo {
+    font-size: 4.6rem;
+    font-weight: bold;
+    color: $third-color;
+    text-transform: none;
+  }
+  &-desc {
+    font-size: 1.5rem;
+    font-family: $secondary-font;
+    line-height: 1.4;
+    color: $text-color;
+    font-weight: 300;
+    margin-top: 3.6rem;
+  }
+  &-follower {
+    margin-right: 3rem;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    color: $title-color;
+    border-bottom: 1px solid $third-color;
+  }
+  &-social {
+    @include flexBox(center);
+    margin-bottom: 4rem;
+    &-text {
+      font-family: $secondary-font;
+      font-style: italic;
+      font-weight: 300;
+      color: $text-color;
+      font-size: 1.5rem;
+    }
+    &-list {
+      color: $third-color;
+    }
+    &-icon {
+      color: $third-color;
+      margin-left: 2rem;
+      font-size: 1.8rem;
+    }
+  }
+  &-form {
+    width: 100%;
+    max-width: 38rem;
+    @include flexBox();
+    &-input {
+      @include size(23rem, 4rem);
+      padding-left: 1rem;
+      border: 1px solid $gray-dark-color;
+      border-right: 0;
+      font-style: italic;
+      font-family: $secondary-font;
+      font-size: 1.5rem;
+    }
+    &-btn {
+      @include size(15rem, 4rem);
+      background-color: $third-color;
+      border: 0;
+      font-weight: bold;
+      color: white;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+    }
+  }
+  &-list {
+    margin-top: 2rem;
+  }
+  &-blogs {
+    &-item {
+      @include flexBox(center);
+      margin-bottom: 3rem;
+    }
+    &-img {
+      @include size(12rem, 8rem);
+      object-fit: cover;
+    }
+    &-info {
+      margin-left: 2rem;
+    }
+    &-title {
+      font-size: 1.2rem;
+      color: $title-color;
+      font-weight: 500;
+      text-transform: uppercase;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      @include textClamp(2);
+    }
+    &-date {
+      font-family: $secondary-font;
+      font-style: italic;
+      font-size: 1.3rem;
+      color: $text-color;
+    }
+  }
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 9rem);
+    grid-gap: 2px;
+    margin-bottom: 2rem;
+    &-img {
+      @include size(9rem);
+      object-fit: cover;
+    }
+  }
+  &-span-viewmore {
+    font-family: $secondary-font;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: $text-color;
+  }
+  &-bottom {
+    text-align: center;
+    &-text span {
+      color: $primary-color;
+    }
+  }
+  @include maxWidth(1023px) {
+    padding: 5rem 0;
+    &-top{
+      display: block;
+    }
+    &-column:not(:nth-child(99)){
+      width: 100%;
+      margin-bottom: 3rem;
+    }
+  }
+}
+strong {
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: $title-color;
+}

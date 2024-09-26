@@ -1,0 +1,7 @@
+.logos {
+    padding: 8rem 0;
+    background-color: $gray-color;
+    @include maxWidth(767px) {
+        padding: 3rem 0;
+    }
+}

@@ -1,0 +1,80 @@
+.wedo {
+  padding: 11rem 0;
+
+  &-img {
+    object-fit: cover;
+  }
+  &-accordion:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+  &-accordion.isActive .wedo-accordion-content {
+    display: block;
+  }
+  &-accordion-header {
+    @include flexBox(center);
+    padding: 1.5rem;
+    border: 1px solid $gray-light-color;
+    cursor: pointer;
+  }
+  &-accordion-icon {
+    margin-right: 1.5rem;
+  }
+  &-accordion-title {
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  &-accordion-expand {
+    margin-left: auto;
+    color: $gray-dark-color;
+    font-size: 2.5rem;
+  }
+  &-accordion-content {
+    padding: 2rem;
+    border: 1px solid $gray-light-color;
+    border-top: 0;
+    font-size: 1.5rem;
+    font-family: $secondary-font;
+    font-style: italic;
+    line-height: 1.6;
+    font-weight: 300;
+    color: $text-color;
+    display: none;
+  }
+  &-accodion-text {
+    height: 13rem;
+    overflow-y: auto;
+    padding-right: 2rem;
+    &::-webkit-scrollbar {
+      width: 0.5rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: $gray-light-color;
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $third-color;
+      border-radius: 2rem;
+    }
+  }
+  @include maxWidth(767px) {
+    padding: 5rem 0;
+    &-content {
+      margin-top: 1.5rem;
+    }
+  }
+  @include minWidth(768px) {
+    &-container {
+      @include flexBox(stretch, space-between);
+      // trỏ trực tiếp tới các phần tử con
+      // & > * {
+      //     width: calc(50% - 1.5rem);
+      // }
+    }
+    &-content,
+    &-img {
+      width: calc(50% - 1.5rem);
+    }
+  }
+}

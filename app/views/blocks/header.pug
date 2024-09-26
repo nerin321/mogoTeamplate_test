@@ -1,0 +1,34 @@
+header.header 
+    .container
+        .header-top 
+            a.header-logo(href="index.html") MoGo
+            i.fa.fa-bars.header-toggle
+            ul.header-menu
+                +menuLinks("About")
+                +menuLinks("Service")
+                +menuLinks("Work")
+                +menuLinks("Blog")
+                +menuLinks("Contact")
+                //- li.header-menu-item
+                //-     a.header-menu-link(href="#") Service
+                //- li.header-menu-item
+                //-     a.header-menu-link(href="#") Work
+                //- li.header-menu-item
+                //-     a.header-menu-link(href="#") Blog 
+                //- li.header-menu-item
+                //-     a.header-menu-link(href="#") Contact
+                li.header-menu-item
+                    a.header-menu-icon(href="#")
+                        i.fa.fa-shopping-cart
+                li.header-menu-item
+                    a.header-menu-icon(href="#")
+                        i.fa.fa-search
+        .header-content  
+            h2.header-content-caption Creative Teamplate
+            h1.header-content-main Wellcome to MoGo
+            a.header-content-more(href="#") Learn more
+        .header-bottom
+            +bottomItem("01", "Intro")
+            +bottomItem("02", "Work")
+            +bottomItem("03", "About")
+            +bottomItem("04", "Contacts")

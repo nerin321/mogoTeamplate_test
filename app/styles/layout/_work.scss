@@ -1,0 +1,79 @@
+.work {
+  padding-top: 10rem;
+  // grid css
+  //   &-grid {
+  //     display: grid;
+  //     grid-template-columns: repeat(4, auto);
+  //   }
+  //   &-col-span {
+  //     grid-column: 3;
+  //     grid-row: 1 / 3;
+  //   }
+  &-list {
+    @include flexBox;
+    height: 78rem;
+  }
+  &-column {
+    width: 25%;
+  }
+  &-content {
+    color: white;
+    text-align: center;
+  }
+  &-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+  &-title {
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+  &-desc {
+    font-family: $secondary-font;
+    font-style: italic;
+    font-size: 1.5rem;
+  }
+  &-img {
+    @include size(100%);
+    object-fit: cover;
+  }
+  &-item {
+    height: 50%;
+  }
+  &-item--full {
+    height: 100%;
+  }
+  @include maxWidth(1600px) {
+    &-list {
+      height: 60rem;
+    }
+  }
+  @include maxWidth(1279px) {
+    &-list {
+      flex-wrap: wrap;
+      height: auto;
+    }
+    &-column {
+      width: 50%;
+    }
+    &-item {
+      height: 42rem;
+    }
+    &-item--full {
+      height: 84rem;
+    }
+  }
+  @include maxWidth(767px) {
+    padding-top: 5rem;
+    &-column {
+      width: 100%;
+    }
+    &-item,
+    &-item--full {
+      height: auto;
+    }
+  }
+}
+
+@include hoverEffect(".work-item", ".work-content", "false");

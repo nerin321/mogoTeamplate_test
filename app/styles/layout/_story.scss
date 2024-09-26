@@ -1,0 +1,116 @@
+.story {
+  padding: 10rem 0;
+  &-list {
+    @include flexBox(stretch, space-between);
+  }
+  &-item {
+    width: calc(33.33% - 2rem);
+  }
+  &-media {
+    position: relative;
+  }
+  &-img {
+    @include size(100%, 24rem);
+    object-fit: cover;
+  }
+  &-date {
+    background-color: $third-color;
+    padding: 1.5rem 2rem;
+    @include flexBox(center, center, column);
+    color: white;
+    position: absolute;
+    bottom: 1rem;
+    left: -1rem;
+    &-number {
+      font-weight: bold;
+      font-size: 3rem;
+    }
+    &-text {
+      font-family: $secondary-font;
+      font-style: italic;
+    }
+  }
+  &-title {
+    text-transform: uppercase;
+    font-weight: 500;
+    color: $title-color;
+    padding: 2rem 0;
+  }
+  &-desc {
+    font-family: $secondary-font;
+    font-weight: 300;
+    color: $text-color;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid $third-color;
+  }
+  &-meta {
+    @include flexBox(center);
+    color: $third-color;
+    &-item:not(:last-child) {
+      margin-right: 2rem;
+    }
+    &-icon {
+      margin-right: 0.5rem;
+    }
+  }
+  @include maxWidth(1023px) {
+    padding: 5rem 0;
+    &-img {
+      height: 14rem;
+    }
+    &-date {
+      padding: 1rem 1.5rem;
+      &-number {
+        font-size: 2rem;
+      }
+    }
+    &-title {
+      padding: 1.5rem 0;
+      font-size: 1.2rem;
+    }
+    &-desc {
+      padding-bottom: 1.5rem;
+      margin-bottom: 1.5rem;
+      font-size: 1.3rem;
+      @include textClamp(4);
+    }
+  }
+  @include maxWidth(767px) {
+    &-list {
+      @include touchSlide();
+    }
+    &-img {
+      height: auto;
+    }
+  }
+}
+
+.map {
+  padding: 6rem 0;
+  background: linear-gradient(to bottom, rgba(white, 0.8), rgba(white, 0.7)),
+    url("../images/img-map.png") no-repeat center / cover;
+  &-content {
+    @include flexBox(center, center, column);
+  }
+  &-icon {
+    margin-bottom: 1.5rem;
+  }
+  &-text {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 2.4rem;
+    color: $primary-color;
+    padding-bottom: 2rem;
+    position: relative;
+    &:after {
+      content: "";
+      @include size(6.5rem, 4px);
+      background-color: $primary-color;
+      @include absolute();
+      bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,107 @@
+mixin menuLinks(title, href="#")
+	li.header-menu-item
+		a.header-menu-link(href=href)= title   
+
+mixin bottomItem(num, text)
+	.header-bottom-item
+		span.header-bottom-number= num
+		span.header-bottom-text= text 
+
+mixin blockHeader(caption, title, desc)
+	.block-header 
+		h3.block-header-caption= caption 
+		h2.block-header-heading= title 
+		if desc 
+			p.block-header-desc= desc
+
+// img about
+mixin aboutItem(src, iconClass, title, alt= "")
+	.about-item 
+		img.about-img(src= src alt="")
+		.about-content
+			i.about-icon(class= iconClass)
+			span.about-icon-title= title 
+
+mixin numberItem(count, text)
+	.number-item
+		h4.number-item-count= count 
+		span.number-item-text= text 
+
+// service mixin
+mixin serviceItem (src, title, desc)
+	.service-item
+		img.service-icon(src= src)
+		.service-item-info
+			.service-item-title= title
+			p.service-item-desc= desc
+
+// team item
+mixin socialItem(facebook = "#", twitter = "#", pinterest = "#", instagram = "#")
+	ul.team-social 
+		li.team-social-item
+			a.team-social-link(href= facebook)
+				i.fab.fa-facebook-f
+		li.team-social-item
+			a.team-social-link(href= twitter)
+				i.fab.fa-twitter
+		li.team-social-item
+			a.team-social-link(href= pinterest)
+				i.fab.fa-pinterest-p
+		li.team-social-item
+			a.team-social-link(href= instagram)
+				i.fab.fa-instagram
+
+mixin teamItem(src, name, position)
+	.team-item 
+		.team-main 
+			img(src= src alt="").team-img
+			.team-content
+				if block 
+					block
+		.team-info 
+			h3.team-name= name 
+			span.team-position= position
+
+mixin workItem(src, title, desc, full="") 
+	.work-item(class= full)
+		img(src=src alt="").work-img
+		.work-content 
+			i.far.fa-image.work-icon 
+			h3.work-title= title
+			span.work-desc= desc
+
+mixin peopleItem(src, name, job, desc)
+	li.people-item
+		img.people-avatar(src= src  alt="")
+		.people-info 
+			h3.people-name= name
+			span.people-job= job
+			p.people-desc= desc
+
+mixin storyItem(src= "../images/img-blog1.png", date= "1", month= "Jan", title= "Story title", desc= "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, voluptatem rerum?", eye= "0", comment= "0")
+	li.story-item
+		.story-media 
+			img.story-img(src= src alt="")
+			.story-date 
+				span.story-date-number= date 
+				span.story-date-text= month 
+		h3.story-title= title
+		p.story-desc= desc 
+		.story-meta 
+			.story-meta-item 
+				i.fa.fa-eye.story-meta-icon 
+				span.story-meta-count= eye 
+			.story-meta-item 
+				i.fa.fa-comment-dots.story-meta-icon 
+				span.story-meta-count= comment
+
+mixin quoteItem(src="../images/img-quote.png", type = false, desc= "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe ad quod numquam. Odit nostrum ipsam quibusdam explicabo obcaecati, quas sunt minus ab natus atque voluptatem a eum blanditiis ipsa aspernatur.", author= "Jon Doe")
+	.quote-content
+		if type == false 
+			.quote-icon
+				img(src= src alt="") 
+		else 
+			img(src= src alt="").quote-img 
+		.quote-info 
+			p.quote-desc= desc
+			span.quote-author= author

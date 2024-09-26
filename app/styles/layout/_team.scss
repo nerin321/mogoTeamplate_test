@@ -1,0 +1,68 @@
+.team {
+  padding: 10rem 0;
+  &-list {
+    // @include flexBox(stretch, space-between);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 3rem;
+  }
+//   &-item {
+//     width: calc(33.33% - 20px);
+//   }
+  &-img {
+    @include size(100%, 47rem);
+    object-fit: cover;
+  }
+  &-info {
+    text-align: center;
+    padding-top: 3rem;
+    height: calc(100% - 47rem);
+    @include flexBox(center, space-between, column);
+  }
+  &-name {
+    padding-bottom: 1.5rem;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    color: $title-color;
+    font-weight: 500;
+    @include textClamp();
+  }
+  &-position {
+    font-family: $secondary-font;
+    color: $text-color;
+    font-style: italic;
+    font-weight: 300;
+    @include textClamp();
+  }
+  &-social {
+    @include flexBox(center, center);
+  }
+  &-social-item:not(:first-child) {
+    border-left: 1px solid $primary-color;
+  }
+  &-social-link {
+    @include flexBox(center, center);
+    @include size(6rem);
+    color: $primary-color;
+    background-color: $secondary-color;
+    font-size: 2rem;
+    transition: all 0.25s linear;
+    &:hover {
+      color: white;
+      background-color: $primary-color;
+    }
+  }
+  @include maxWidth(1024px) {
+    &-list{
+      @include touchSlide(60%)
+    }
+  }
+  @include maxWidth(767px) {
+    padding: 5rem 0;
+    &-list{
+      @include touchSlide()
+    }
+  }
+}
+
+@include hoverEffect(".team-main", ".team-content");
